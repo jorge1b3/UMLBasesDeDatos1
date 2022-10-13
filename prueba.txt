@@ -1,0 +1,57 @@
+@startuml
+class Proveedor{
+	-rut: string 
+	-nombre: string 
+	-direccion: Direccion 
+	-telefono: int 
+	-paginaWeb: string 
+	+getNombre(): string 
+}
+class Cliente{
+	-nombre: string 
+	-rut: string 
+	-telefonos: int[]
+	-direccion: Direccion
+	+getNombre(): string
+}	
+class Direccion{
+	-calle: int 
+	-numero: int 
+	-comuna: int 
+	-ciudad: string 
+}
+class Producto{
+	-id: int 
+	-nombre: string 
+	-precio: double 
+	-stock: int 
+	-proveedor: Proveedor 
+	+getNombreProvedor() : string
+}
+class Categoria{
+	-id: int 
+	-productos: Producto[]
+	-nombre: string 
+	-descripcion: string 
+	
+}
+class Venta{
+	-id: int 
+	-cantidad: int 
+	-fecha: string 
+	-cliente: string 
+	-descuento: int 
+	-montoFinal: double
+	-producto: Producto
+}
+class Factura{
+	-ventas: Ventas[]
+	-montoTotal: double
+	+realizarVenta()
+}
+Proveedor o-- Direccion
+Cliente o-- Direccion
+Producto *-- Proveedor
+Factura *-- Venta
+Venta *-- Producto
+@enduml
