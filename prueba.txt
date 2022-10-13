@@ -44,6 +44,13 @@ class Venta{
 	-montoFinal: double
 	-producto: Producto
 }
+class DetallesVenta{
+	-producto: Producto
+	-precio: double
+	-cantidad: int
+	-descuento: double
+	+calcularPrecioFinal(): double
+}
 class Factura{
 	-ventas: Ventas[]
 	-montoTotal: double
