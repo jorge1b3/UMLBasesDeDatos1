@@ -37,12 +37,14 @@ class Categoria{
 }
 class Venta{
 	-id: int 
-	-cantidad: int 
 	-fecha: string 
-	-cliente: string 
-	-descuento: int 
+	-cliente: Cliente 
 	-montoFinal: double
-	-producto: Producto
+	-productos: DetallesVentas[]
+	-calcularMontoFinal(): double
+	-getNombreCliente(): string
+	+generarFactura(): void
+	+agregarProducto(): void 
 }
 class DetallesVenta{
 	-producto: Producto
@@ -51,14 +53,12 @@ class DetallesVenta{
 	-descuento: double
 	+calcularPrecioFinal(): double
 }
-class Factura{
-	-ventas: Ventas[]
-	-montoTotal: double
-	+realizarVenta()
-}
+
 Proveedor o-- Direccion
 Cliente o-- Direccion
 Producto *-- Proveedor
-Factura *-- Venta
-Venta *-- Producto
+Venta *-- DetallesVenta
+Producto *-- Categoria
+DetallesVenta *-- Producto
+Venta *-- Cliente
 @enduml
