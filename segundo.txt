@@ -1,0 +1,65 @@
+@startuml
+class Cliente{
+    -nombre:        string
+    -id:            int
+    -direcciones:   Direccion[]
+    -saldo:         double
+    -limiteCredito: double
+    -descuento:     double
+    +getNombre():   string
+    +ingresarLimiteDeCredito(): void
+}
+
+class Articulo{
+    -id:            int
+    -articuloPorProvedor: DetallesDeArticulo[]
+    -descripcion:   string
+    +getId():       int
+    +getDetalleDeArticulo(): DetallesDeArticulo[]
+}
+
+class DetallesDeArticulo{
+    -provedor: Provedor
+    -stock: int
+    +getStock(): int
+    +getProvedor(): Provedor
+    -añadirCantidadAProvedor()
+}
+
+class Provedor{
+    -id:            int
+    -telefono:      int
+    -cantidadDeProduccion: int
+    +getCantidad(): int
+    +SetCantidad(): void
+}
+
+class Pedido{
+    -cliente:       Cliente
+    -direccion:     Direccion
+    -fecha:         string
+    -cuerpo:        DetallesPedido[]
+    +printRecibo(): string
+    +printCantidadPorFabrica(): string 
+}
+
+class DetallesPedido{
+    -articulo:      Articulo
+    -cantidad:      int
+    +getDetallesDeArticulos(): DetallesDeArticulo[]
+}
+
+class Direccion{
+    -numero:        int
+    -calle:         string
+    -ciudad:        string
+    -comuna:        int
+}
+
+Articulo -- DetallesDeArticulo
+DetallesDeArticulo -- Provedor
+Pedido -- DetallesPedido
+Pedido -- Cliente
+DetallesPedido -- Articulo
+Cliente -- Direccion
+@enduml

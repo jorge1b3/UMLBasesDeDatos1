@@ -26,7 +26,6 @@ class Producto{
 	-precio: double 
 	-stock: int 
 	-proveedor: Proveedor 
-	+getNombreProvedor() : string
 }
 class Categoria{
 	-id: int 
@@ -42,7 +41,6 @@ class Venta{
 	-montoFinal: double
 	-productos: DetallesVentas[]
 	-calcularMontoFinal(): double
-	-getNombreCliente(): string
 	+generarFactura(): void
 	+agregarProducto(): void 
 }
@@ -58,7 +56,7 @@ Proveedor o-- Direccion
 Cliente o-- Direccion
 Producto *-- Proveedor
 Venta *-- DetallesVenta
-Producto *-- Categoria
+Producto --* Categoria
 DetallesVenta *-- Producto
 Venta *-- Cliente
 @enduml
