@@ -1,4 +1,4 @@
-@startuml
+@startuml Primero
 class Proveedor{
 	-rut: string 
 	-nombre: string 

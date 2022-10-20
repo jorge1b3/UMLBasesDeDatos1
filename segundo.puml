@@ -1,4 +1,4 @@
-@startuml
+@startuml Segundo
 class Cliente{
     -nombre:        string
     -id:            int
