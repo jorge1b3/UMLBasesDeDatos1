@@ -40,7 +40,7 @@ class Pedido{
     -fecha:         string
     -cuerpo:        DetallesPedido[]
     +printRecibo(): string
-    +printCantidadPorFabrica(): string 
+    +printCantidadPorFabrica(Provedor): string 
 }
 
 class DetallesPedido{
