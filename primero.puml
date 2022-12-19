@@ -56,7 +56,7 @@ Proveedor o-- Direccion
 Cliente o-- Direccion
 Producto *-- Proveedor
 Venta *-- DetallesVenta
-Producto --* Categoria
+Producto --* Categoría
 DetallesVenta *-- Producto
 Venta *-- Cliente
 @enduml
