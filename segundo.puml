@@ -2,7 +2,7 @@
 class Cliente{
     -nombre:        string
     -id:            int
-    -direcciones:   Direccion[]
+    -direcciones:   Dirección[]
     -saldo:         double
     -limiteCredito: double
     -descuento:     double
