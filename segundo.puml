@@ -4,7 +4,7 @@ class Cliente{
     -id:            int
     -direcciones:   Dirección[]
     -saldo:         double
-    -limiteCredito: double
+    -límiteCredito: double
     -descuento:     double
     +getNombre():   string
     +ingresarLimiteDeCredito(): void
