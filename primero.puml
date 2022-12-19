@@ -3,7 +3,7 @@ class Proveedor{
 	-rut: string 
 	-nombre: string 
 	-direccion: Direccion 
-	-telefono: int 
+	-teléfono: int 
 	-paginaWeb: string 
 	+getNombre(): string 
 }
